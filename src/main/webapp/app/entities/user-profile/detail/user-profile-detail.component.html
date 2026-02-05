@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (userProfile(); as userProfileRef) {
+      <div>
+        <h2 data-cy="userProfileDetailsHeading"><span jhiTranslate="renepontCmaApp.userProfile.detail.title">User Profile</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ userProfileRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.userProfile.phoneNumber">Phone Number</span></dt>
+          <dd>
+            <span>{{ userProfileRef.phoneNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.userProfile.jobTitle">Job Title</span></dt>
+          <dd>
+            <span>{{ userProfileRef.jobTitle }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.userProfile.user">User</span></dt>
+          <dd>
+            <span>{{ userProfileRef.user?.login }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.userProfile.company">Company</span></dt>
+          <dd>
+            @for (company of userProfileRef.companies; track $index; let last = $last) {
+              <span>
+                <a [routerLink]="['/company', company.id, 'view']">{{ company?.id }}</a
+                >{{ last ? '' : ', ' }}
+              </span>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/user-profile', userProfileRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

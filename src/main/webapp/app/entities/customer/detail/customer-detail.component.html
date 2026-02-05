@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (customer(); as customerRef) {
+      <div>
+        <h2 data-cy="customerDetailsHeading"><span jhiTranslate="renepontCmaApp.customer.detail.title">Customer</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ customerRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.customer.name">Name</span></dt>
+          <dd>
+            <span>{{ customerRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.customer.vatRequired">Vat Required</span></dt>
+          <dd>
+            <span>{{ customerRef.vatRequired }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.customer.company">Company</span></dt>
+          <dd>
+            @if (customer()!.company) {
+              <div>
+                <a [routerLink]="['/company', customer()!.company?.id, 'view']">{{ customerRef.company?.name }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/customer', customerRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

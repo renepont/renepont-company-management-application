@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (transaction(); as transactionRef) {
+      <div>
+        <h2 data-cy="transactionDetailsHeading"><span jhiTranslate="renepontCmaApp.transaction.detail.title">Transaction</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ transactionRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.transaction.transactionDate">Transaction Date</span></dt>
+          <dd>
+            <span>{{ transactionRef.transactionDate | formatMediumDate }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.transaction.type">Type</span></dt>
+          <dd>
+            <span [jhiTranslate]="'renepontCmaApp.TransactionType.' + (transactionRef.type ?? 'null')">{{
+              { null: '', INCOME: 'INCOME', EXPENSE: 'EXPENSE' }[transactionRef.type ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.transaction.amount">Amount</span></dt>
+          <dd>
+            <span>{{ transactionRef.amount }}</span>
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.transaction.category">Category</span></dt>
+          <dd>
+            @if (transaction()!.category) {
+              <div>
+                <a [routerLink]="['/category', transaction()!.category?.id, 'view']">{{ transactionRef.category?.name }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="renepontCmaApp.transaction.company">Company</span></dt>
+          <dd>
+            @if (transaction()!.company) {
+              <div>
+                <a [routerLink]="['/company', transaction()!.company?.id, 'view']">{{ transactionRef.company?.name }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/transaction', transactionRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

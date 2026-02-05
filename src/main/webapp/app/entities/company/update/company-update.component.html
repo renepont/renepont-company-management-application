@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-company-heading" data-cy="CompanyCreateUpdateHeading" jhiTranslate="renepontCmaApp.company.home.createOrEditLabel">
+        Create or edit a Company
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="renepontCmaApp.company.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let nameRef = editForm.get('name')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="renepontCmaApp.company.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          @if (nameRef.invalid && (nameRef.dirty || nameRef.touched)) {
+            <div>
+              @if (editForm.get('name')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              @if (editForm.get('name')?.errors?.minlength) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: '3' }"
+                  >This field is required to be at least 3 characters.</small
+                >
+              }
+            </div>
+          }
+        </div>
+
+        @let nifRef = editForm.get('nif')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_nif" jhiTranslate="renepontCmaApp.company.nif">Nif</label>
+          <input type="text" class="form-control" name="nif" id="field_nif" data-cy="nif" formControlName="nif" />
+          @if (nifRef.invalid && (nifRef.dirty || nifRef.touched)) {
+            <div>
+              @if (editForm.get('nif')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="field_userProfiles" jhiTranslate="renepontCmaApp.company.userProfile">User Profile</label>
+          <select
+            class="form-control"
+            id="field_userProfiles"
+            data-cy="userProfile"
+            multiple
+            name="userProfiles"
+            formControlName="userProfiles"
+            [compareWith]="compareUserProfile"
+          >
+            @for (userProfileOption of userProfilesSharedCollection; track $index) {
+              <option [ngValue]="userProfileOption">{{ userProfileOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

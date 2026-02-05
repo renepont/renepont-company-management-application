@@ -1,0 +1,28 @@
+{
+  "renepontCmaApp": {
+    "transaction": {
+      "home": {
+        "title": "Transactions",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Transaction",
+        "createOrEditLabel": "Criar ou editar Transaction",
+        "notFound": "Nenhum Transaction encontrado"
+      },
+      "created": "Um novo Transaction foi criado com o identificador {{ param }}",
+      "updated": "Um Transaction foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Transaction foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction"
+      },
+      "id": "ID",
+      "transactionDate": "Transaction Date",
+      "type": "Type",
+      "amount": "Amount",
+      "category": "Category",
+      "company": "Company"
+    }
+  }
+}

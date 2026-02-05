@@ -1,0 +1,51 @@
+entity Company {
+  name String required minlength(3),
+  nif String required unique
+}
+
+entity UserProfile {
+  phoneNumber String,
+  jobTitle String
+}
+
+entity Customer {
+  name String required,
+  vatRequired Boolean required
+}
+
+entity Transaction {
+  transactionDate LocalDate required,
+  type TransactionType required,
+  amount BigDecimal required
+}
+
+entity Category {
+  name String required unique
+}
+
+enum TransactionType {
+  INCOME,
+  EXPENSE
+}
+
+// RELACIONAMENTOS
+relationship OneToOne {
+  UserProfile{user(login)} to User with builtInEntity
+}
+
+relationship ManyToMany {
+  // Definindo claramente quem é o dono da relação para o MySQL
+  Company{userProfile} to UserProfile{company}
+}
+
+relationship ManyToOne {
+  Transaction{category(name)} to Category,
+  Transaction{company(name)} to Company,
+  Customer{company(name)} to Company
+}
+
+// OPÇÕES
+filter *
+paginate Transaction, Customer, UserProfile with pagination
+service all with serviceClass
+dto * with mapstruct

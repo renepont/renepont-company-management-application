@@ -1,0 +1,27 @@
+{
+  "renepontCmaApp": {
+    "userProfile": {
+      "home": {
+        "title": "User Profiles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) User Profile",
+        "createOrEditLabel": "Criar ou editar User Profile",
+        "notFound": "Nenhum User Profiles encontrado"
+      },
+      "created": "Um novo User Profile foi criado com o identificador {{ param }}",
+      "updated": "User Profile com identificador {{ param }} foi actualizado",
+      "deleted": "User Profile com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) User Profile {{ id }}?"
+      },
+      "detail": {
+        "title": "User Profile"
+      },
+      "id": "ID",
+      "phoneNumber": "Phone Number",
+      "jobTitle": "Job Title",
+      "user": "User",
+      "company": "Company"
+    }
+  }
+}
