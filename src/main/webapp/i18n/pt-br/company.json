@@ -1,25 +1,25 @@
 {
   "renepontCmaApp": {
-    "company": {
+    "Empresa": {
       "home": {
-        "title": "Companies",
+        "title": "Empresas",
         "refreshListLabel": "Atualizar lista",
-        "createLabel": "Criar novo Company",
-        "createOrEditLabel": "Criar ou editar Company",
-        "notFound": "Nenhum Company encontrado"
+        "createLabel": "Criar novo Empresa",
+        "createOrEditLabel": "Criar ou editar Empresa",
+        "notFound": "Nenhum Empresa encontrado"
       },
-      "created": "Um novo Company foi criado com o identificador {{ param }}",
-      "updated": "Um Company foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Company foi excluído com o identificador {{ param }}",
+      "created": "Uma novo Empresa foi criado com o identificador {{ param }}",
+      "updated": "Uma Empresa foi atualizado com o identificador {{ param }}",
+      "deleted": "Uma Empresa foi excluído com o identificador {{ param }}",
       "delete": {
-        "question": "Tem certeza de que deseja excluir Company {{ id }}?"
+        "question": "Tem certeza de que deseja excluir a Empresa {{ id }}?"
       },
       "detail": {
-        "title": "Company"
+        "title": "Empresa"
       },
       "id": "ID",
-      "name": "Name",
-      "nif": "Nif",
+      "name": "Nome",
+      "nif": "NIF",
       "userProfile": "User Profile"
     }
   }

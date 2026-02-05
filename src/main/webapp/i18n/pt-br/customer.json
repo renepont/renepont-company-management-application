@@ -1,26 +1,26 @@
 {
   "renepontCmaApp": {
-    "customer": {
+    "Cliente": {
       "home": {
-        "title": "Customers",
+        "title": "Clientes",
         "refreshListLabel": "Atualizar lista",
-        "createLabel": "Criar novo Customer",
-        "createOrEditLabel": "Criar ou editar Customer",
-        "notFound": "Nenhum Customer encontrado"
+        "createLabel": "Novo Cliente",
+        "createOrEditLabel": "Criar ou editar Cliente",
+        "notFound": "Nenhum Cliente encontrado"
       },
-      "created": "Um novo Customer foi criado com o identificador {{ param }}",
-      "updated": "Um Customer foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Customer foi excluído com o identificador {{ param }}",
+      "created": "Um novo Cliente foi criado com o identificador {{ param }}",
+      "updated": "Um Cliente foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Cliente foi excluído com o identificador {{ param }}",
       "delete": {
-        "question": "Tem certeza de que deseja excluir Customer {{ id }}?"
+        "question": "Tem certeza de que deseja excluir o Cliente {{ id }}?"
       },
       "detail": {
-        "title": "Customer"
+        "title": "Cliente"
       },
       "id": "ID",
-      "name": "Name",
-      "vatRequired": "Vat Required",
-      "company": "Company"
+      "name": "Nome",
+      "vatRequired": "Fatura com IVA",
+      "company": "Empresa"
     }
   }
 }

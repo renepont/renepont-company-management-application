@@ -8,11 +8,11 @@
       "entities": {
         "main": "Entidades",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "company": "Company",
-        "userProfile": "User Profile",
-        "customer": "Customer",
-        "transaction": "Transaction",
-        "category": "Category"
+        "company": "Empresa",
+        "userProfile": "Colaborador",
+        "customer": "Cliente",
+        "transaction": "Transação",
+        "category": "Categoria"
       },
       "account": {
         "main": "Conta",

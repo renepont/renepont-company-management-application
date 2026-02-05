@@ -2,8 +2,8 @@
   "renepontCmaApp": {
     "TransactionType": {
       "null": "",
-      "INCOME": "INCOME",
-      "EXPENSE": "EXPENSE"
+      "INCOME": "Receita",
+      "EXPENSE": "Despesa"
     }
   }
 }

@@ -1,21 +1,21 @@
 {
   "renepontCmaApp": {
-    "category": {
+    "Categoria": {
       "home": {
-        "title": "Categories",
+        "title": "Categoria",
         "refreshListLabel": "Atualizar lista",
-        "createLabel": "Criar novo Category",
-        "createOrEditLabel": "Criar ou editar Category",
-        "notFound": "Nenhum Category encontrado"
+        "createLabel": "Criar nova Categoria",
+        "createOrEditLabel": "Criar ou editar Categoria",
+        "notFound": "Nenhuma Categoria encontrada"
       },
-      "created": "Um novo Category foi criado com o identificador {{ param }}",
-      "updated": "Um Category foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Category foi excluído com o identificador {{ param }}",
+      "created": "Uma nova Categoria foi criado com o identificador {{ param }}",
+      "updated": "Um Categoria foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Categoria foi excluído com o identificador {{ param }}",
       "delete": {
-        "question": "Tem certeza de que deseja excluir Category {{ id }}?"
+        "question": "Tem certeza de que deseja excluir Categoria {{ id }}?"
       },
       "detail": {
-        "title": "Category"
+        "title": "Categoria"
       },
       "id": "ID",
       "name": "Name"

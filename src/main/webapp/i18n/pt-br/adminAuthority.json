@@ -1,21 +1,21 @@
 {
   "renepontCmaApp": {
-    "adminAuthority": {
+    "adminPerfil": {
       "home": {
-        "title": "Authorities",
+        "title": "Perfis",
         "refreshListLabel": "Atualizar lista",
-        "createLabel": "Criar novo Authority",
-        "createOrEditLabel": "Criar ou editar Authority",
-        "notFound": "Nenhum Authority encontrado"
+        "createLabel": "Criar novo Perfil",
+        "createOrEditLabel": "Criar ou editar Perfil",
+        "notFound": "Nenhum Perfil encontrado"
       },
-      "created": "Um novo Authority foi criado com o identificador {{ param }}",
-      "updated": "Um Authority foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Authority foi excluído com o identificador {{ param }}",
+      "created": "Um novo Perfil foi criado com o identificador {{ param }}",
+      "updated": "Um Perfil foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Perfil foi excluído com o identificador {{ param }}",
       "delete": {
-        "question": "Tem certeza de que deseja excluir Authority {{ id }}?"
+        "question": "Tem certeza de que deseja excluir Perfil {{ id }}?"
       },
       "detail": {
-        "title": "Authority"
+        "title": "Perfil"
       },
       "name": "Name"
     }
